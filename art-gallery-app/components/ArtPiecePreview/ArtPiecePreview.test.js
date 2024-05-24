@@ -1,7 +1,5 @@
 import { render, screen } from "@testing-library/react";
-
-import ArtPieces from "./ArtPieces";
-import { headers } from "next/dist/client/components/headers";
+import ArtPiecePreview from "./ArtPiecePreview";
 
 const initialPieces = [
   {
@@ -35,8 +33,26 @@ const initialPieces = [
   },
 ];
 
-test("check for list element and if pieces are inside of that", () => {
-  render(<ArtPieces pieces={initialPieces} />);
-  const list = screen.getByRole("list");
-  expect(list).toBeInTheDocument();
+test("check for title being displayed", () => {
+  render(
+    <ArtPiecePreview
+      image={initialPieces.imageSource}
+      title={initialPieces.name}
+    />
+  );
+  const title = screen.getByRole("heading", { title: "Blue and Red" });
+  expect(title).toBeInTheDocument();
+});
+
+test("each image is displayed", () => {
+  render(
+    <ArtPiecePreview
+      image={initialPieces.imageSource}
+      title={initialPieces.name}
+    />
+  );
+  const image = screen.getByRole("img", {
+    image: "https://example-apis.vercel.app/assets/art/blue-and-red.jpg",
+  });
+  expect(image).toBeInTheDocument();
 });
