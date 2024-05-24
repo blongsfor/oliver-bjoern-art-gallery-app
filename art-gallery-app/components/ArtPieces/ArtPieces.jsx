@@ -5,7 +5,7 @@ export default function ArtPieces({ pieces }) {
 
   console.log("fetched", typeof fetchedPieces);
   return (
-    <>
+    <ul>
       {pieces.map((piece) => (
         <li key={pieces.slug}>
           <ArtPiecePreview
@@ -15,6 +15,6 @@ export default function ArtPieces({ pieces }) {
           />
         </li>
       ))}
-    </>
+    </ul>
   );
 }
