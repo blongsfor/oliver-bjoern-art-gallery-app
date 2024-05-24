@@ -7,12 +7,13 @@ export default function ArtPieces({ pieces }) {
   return (
     <>
       {pieces.map((piece) => (
-        <ArtPiecePreview
-          key={pieces.slug}
-          image={piece.imageSource}
-          title={piece.name}
-          artist={piece.artist}
-        />
+        <li key={pieces.slug}>
+          <ArtPiecePreview
+            image={piece.imageSource}
+            title={piece.name}
+            artist={piece.artist}
+          />
+        </li>
       ))}
     </>
   );
