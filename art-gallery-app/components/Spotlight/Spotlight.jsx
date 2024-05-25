@@ -9,7 +9,6 @@ export default function Spotlight({ pieces }) {
       <h2>Spotlight</h2>
       <ArtPiecePreview
         image={selectedPiece.imageSource}
-        title={selectedPiece.name}
         artist={selectedPiece.artist}
       />
     </div>
