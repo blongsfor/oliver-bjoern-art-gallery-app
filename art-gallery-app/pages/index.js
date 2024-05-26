@@ -19,7 +19,7 @@ export default function HomePage() {
     return res.json();
   };
 
-  const { data, error, isLoading, mutate } = useSWR(URL, fetcher);
+  const { data, error, isLoading } = useSWR(URL, fetcher);
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
