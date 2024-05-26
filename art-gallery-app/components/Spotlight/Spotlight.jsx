@@ -1,4 +1,5 @@
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import Layout from "../Layout/Layout";
 
 export default function Spotlight({ pieces }) {
   const randomIndex = Math.floor(Math.random() * pieces.length);
