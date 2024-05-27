@@ -3,7 +3,6 @@ import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview.jsx";
 export default function ArtPieces({
   pieces,
   onToggleFavorite,
-  artPiecesInfos,
 }) {
   return (
     <ul>
@@ -15,9 +14,7 @@ export default function ArtPieces({
             artist={piece.artist}
             slug={piece.slug}
             isFavorite={piece.isFavorite}
-            onToggleFavorite={onToggleFavorite}
-            artPiecesInfos={artPiecesInfos}
-            // onToggleFavorite={() => onToggleFavorite(piece.slug)}
+            onToggleFavorite={() => onToggleFavorite(piece.slug)}
           />
         </li>
       ))}

@@ -6,7 +6,6 @@ export default function FavoriteButton({
   isFavorite,
   onToggleFavorite,
   slug,
-  artPiecesInfos,
 }) {
   return (
     <Image
@@ -14,7 +13,6 @@ export default function FavoriteButton({
       width={30}
       height={30}
       alt="favorite"
-      artPiecesInfos={artPiecesInfos}
       onClick={onToggleFavorite}
     />
   );
