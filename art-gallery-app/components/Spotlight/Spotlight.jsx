@@ -9,6 +9,7 @@ export default function Spotlight({ pieces }) {
     <div>
       <h2>Spotlight</h2>
       <ArtPiecePreview
+        slug={selectedPiece.slug}
         image={selectedPiece.imageSource}
         artist={selectedPiece.artist}
       />
