@@ -7,6 +7,8 @@ export default function ArtPiecesDetailsPage({ pieces }) {
 
   const selectedArtPiece = pieces.find((piece) => piece.slug === slug);
 
+  if (!selectedArtPiece) return null;
+
   return (
     <ArtPiecesDetails
       image={selectedArtPiece.imageSource}
