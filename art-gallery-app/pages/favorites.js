@@ -4,11 +4,6 @@ export default function Favorites({ artPiecesInfos, onToggleFavorite }) {
   const favoritePieces = artPiecesInfos.filter((piece) => piece.isFavorite);
 
   return (
-    <ArtPieces
-      pieces={favoritePieces}
-      onToggleFavorite={onToggleFavorite}
-    />
+    <ArtPieces pieces={favoritePieces} onToggleFavorite={onToggleFavorite} />
   );
 }
-
-
