@@ -5,8 +5,6 @@ export default function ArtPiecesDetailsPage({ pieces }) {
   const router = useRouter();
   const { slug } = router.query;
 
-  console.log("pieces: ", pieces);
-
   const selectedArtPiece = pieces.find((piece) => piece.slug === slug);
 
   return (
