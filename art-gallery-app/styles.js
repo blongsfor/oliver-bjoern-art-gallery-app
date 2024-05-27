@@ -13,6 +13,7 @@ export default createGlobalStyle`
     display: flex;
     justify-content: center; 
     align-items: center;
+    background-color: #f5eddd;
   }
   .navbar {
   display: flex;
@@ -29,6 +30,7 @@ export default createGlobalStyle`
   border: 2px solid black;
   border-radius: 10px;
   font-weight: bold;
+  background-color: #edb790;
 
 }
 
