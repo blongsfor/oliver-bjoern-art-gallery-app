@@ -25,8 +25,8 @@ export default function App({ Component, pageProps }) {
       setArtPiecesInfos([...artPiecesInfos, { slug, isFavorite: true }]);
     }
   }
-  console.log("artPiecesInfos ", artPiecesInfos);
-  // console.log("artPiecesInfos ", artPiecesInfos[0]?.slug);
+  console.log("artPiecesInfos _app.js", artPiecesInfos);
+  // console.log("artPiecesInfos[0]?.slug) _app.js", artPiecesInfos[0]?.slug);
 
   const URL = "https://example-apis.vercel.app/api/art";
 
