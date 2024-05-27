@@ -15,7 +15,7 @@ export default function FavoriteButton({
       height={30}
       alt="favorite"
       artPiecesInfos={artPiecesInfos}
-      onClick={() => onToggleFavorite(slug)}
+      onClick={onToggleFavorite}
     />
   );
 }
