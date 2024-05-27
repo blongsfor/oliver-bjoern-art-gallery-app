@@ -7,15 +7,7 @@ import { useState } from "react";
 export default function App({ Component, pageProps }) {
   const [artPiecesInfos, setArtPiecesInfos] = useState([]);
 
-  // const fetchedData = (data) => {
-  //   // console.log("data:", data);
-  //   return data;
-  // };
-
-  // console.log("fetchedData:", fetchedData);
-
   function handleToggleFavorite(slug) {
-    console.log("slug", slug);
     const foundArtPiece = artPiecesInfos.find(
       (artPiece) => artPiece.slug === slug
     );
@@ -32,12 +24,10 @@ export default function App({ Component, pageProps }) {
     } else {
       setArtPiecesInfos([...artPiecesInfos, { slug, isFavorite: true }]);
     }
-
-    // console.log("click:", handleToggleFavorite);
   }
-  console.log("artPiecesInfos", artPiecesInfos);
+  console.log("artPiecesInfos _app.js", artPiecesInfos);
+  // console.log("artPiecesInfos[0]?.slug) _app.js", artPiecesInfos[0]?.slug);
 
-  //console.log("check das: ", artPiecesInfos);
   const URL = "https://example-apis.vercel.app/api/art";
 
   const fetcher = async (url) => {
