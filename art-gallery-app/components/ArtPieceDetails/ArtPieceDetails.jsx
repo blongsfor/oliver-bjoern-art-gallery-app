@@ -2,13 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-const Color = styled.div`
-  width: 2rem;
-  height: 2rem;
-  background-color: ${(props) => props.color};
-  border-radius: 50%;
-`;
-
 export default function ArtPieceDetails({
   image,
   title,
