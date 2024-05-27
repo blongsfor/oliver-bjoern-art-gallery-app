@@ -1,9 +1,6 @@
-import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview.jsx";
 
 export default function ArtPieces({ pieces }) {
-  //   console.log("Pieces: ", pieces());
-
-  console.log("fetched", typeof fetchedPieces);
   return (
     <ul>
       {pieces.map((piece) => (
@@ -12,6 +9,7 @@ export default function ArtPieces({ pieces }) {
             image={piece.imageSource}
             title={piece.name}
             artist={piece.artist}
+            slug={piece.slug}
           />
         </li>
       ))}
