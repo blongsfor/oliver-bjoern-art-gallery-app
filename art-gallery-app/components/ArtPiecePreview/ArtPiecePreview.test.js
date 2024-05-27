@@ -34,25 +34,21 @@ const initialPieces = [
 ];
 
 test("check for title being displayed", () => {
-  render(
-    <ArtPiecePreview
-      image={initialPieces.imageSource}
-      title={initialPieces.name}
-    />
-  );
+  render(<ArtPiecePreview title={initialPieces.name} />);
   const title = screen.getByRole("heading", { title: "Blue and Red" });
   expect(title).toBeInTheDocument();
 });
 
 test("each image is displayed", () => {
-  render(
-    <ArtPiecePreview
-      image={initialPieces.imageSource}
-      title={initialPieces.name}
-    />
-  );
+  render(<ArtPiecePreview image={initialPieces.imageSource} />);
   const image = screen.getByRole("img", {
     image: "https://example-apis.vercel.app/assets/art/blue-and-red.jpg",
   });
   expect(image).toBeInTheDocument();
 });
+
+// test("check for artist being displayed", () => {
+//   render(<ArtPiecePreview artist={initialPieces.artist} />);
+//   const artist = screen.getByText(/Jung-Hua Lui/);
+//   expect(artist).toBeInTheDocument();
+// });
