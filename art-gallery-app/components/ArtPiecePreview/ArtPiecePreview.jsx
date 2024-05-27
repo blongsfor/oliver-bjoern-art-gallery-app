@@ -13,9 +13,16 @@ export default function ArtPiecePreview({
   return (
     <>
       <Link href={`art-pieces/${slug}`}>
-        <Image src={image} width={500} height={500} alt={title}></Image>
+        <Image
+          className="artpiece"
+          src={image}
+          width={500}
+          height={500}
+          alt={title}
+        ></Image>
       </Link>
       <FavoriteButton
+        className="favorite-button"
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}
         slug={slug}
