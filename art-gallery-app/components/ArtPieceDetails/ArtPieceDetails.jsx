@@ -10,12 +10,17 @@ export default function ArtPieceDetails({
   artist,
   year,
   genre,
-  slug, 
+  slug,
   isFavorite,
   onToggleFavorite,
   comments,
   onSubmitComment,
+  artPiecesInfos,
 }) {
+  // const comments = artPiecesInfos?.find(
+  //   (artPieceInfo) => artPieceInfo.slug === slug
+  // )?.comments;
+  // console.log("sligslogslug: ", slug);
   return (
     <>
       <div className="artpiece-details">
@@ -29,15 +34,18 @@ export default function ArtPieceDetails({
           height={500}
           alt={title}
         ></Image>
-        <div className="details">
+        <div className="details" style={{ marginTop: "20px" }}>
           <h3>Title: {title}</h3>
           <p>Artist: {artist}</p>
           <p>Year: {year}</p>
           <p>Genre: {genre}</p>
         </div>
       </div>
-      <CommentForm onSubmitComment={onSubmitComment} slug={slug}/>
-      <Comments comments={comments} />
+      <div className="comment-container">
+        <CommentForm onSubmitComment={onSubmitComment} slug={slug} />
+
+        <Comments comments={comments} />
+      </div>
     </>
   );
 }

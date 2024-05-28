@@ -3,9 +3,13 @@ import GlobalStyle from "../styles";
 import useSWR from "swr";
 import { SWRConfig } from "swr";
 import { useState, useEffect } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
-  const [artPiecesInfos, setArtPiecesInfos] = useState([]);
+  const [artPiecesInfos, setArtPiecesInfos] = useLocalStorageState(
+    "artPiecesInfos",
+    { defaultValue: [] }
+  );
 
   const handleAddComment = (slug, commentText) => {
     console.log("slug, commentText", slug, commentText);
@@ -54,7 +58,7 @@ export default function App({ Component, pageProps }) {
   const { data, error, isLoading } = useSWR(URL, fetcher);
 
   useEffect(() => {
-    if (data) {
+    if (data && artPiecesInfos.length === 0) {
       setArtPiecesInfos(data.map((piece) => ({ ...piece, isFavorite: false })));
     }
   }, [data]);

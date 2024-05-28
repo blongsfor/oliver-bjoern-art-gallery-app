@@ -49,6 +49,6 @@ test("each image is displayed", () => {
 
 // test("check for artist being displayed", () => {
 //   render(<ArtPiecePreview artist={initialPieces.artist} />);
-//   const artist = screen.getByText(/Jung-Hua Lui/);
+//   const artist = screen.getByText("Jung-Hua Lui");
 //   expect(artist).toBeInTheDocument();
 // });

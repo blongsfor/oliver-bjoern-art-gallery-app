@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Distributes space evenly between items */
+  padding: 0 20px; /* Optional: Adds some padding to the left and right */
+}
+
+.link {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits color from the parent element */
+  padding: 10px 20px; /* Optional: Adds some padding around each link */
+}
