@@ -10,10 +10,10 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
     background-color: #f5eddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .navbar {
   display: flex;
@@ -79,11 +79,16 @@ export default createGlobalStyle`
 }
 
 ul {
-  list-style-type: none;
-}
- li {
-  list-style-type: none;
- }
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 
 .details{
   text-align: center; 
@@ -112,7 +117,7 @@ ul {
     justify-content: center;
     align-items: center;
     padding: 10px 0;
-    z-index: 1000; /* Ensure the navbar stays on top */
+    z-index: 1000; 
   }
 
 
