@@ -15,7 +15,12 @@ export default function ArtPieceDetails({
   onToggleFavorite,
   comments,
   onSubmitComment,
+  artPiecesInfos,
 }) {
+  // const comments = artPiecesInfos?.find(
+  //   (artPieceInfo) => artPieceInfo.slug === slug
+  // )?.comments;
+  // console.log("sligslogslug: ", slug);
   return (
     <>
       <div className="artpiece-details">
@@ -38,6 +43,7 @@ export default function ArtPieceDetails({
       </div>
       <div className="comment-container">
         <CommentForm onSubmitComment={onSubmitComment} slug={slug} />
+
         <Comments comments={comments} />
       </div>
     </>
