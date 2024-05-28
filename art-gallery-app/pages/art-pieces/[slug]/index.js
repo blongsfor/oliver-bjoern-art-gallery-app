@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import ArtPiecesDetails from "../../../components/ArtPieceDetails/ArtPieceDetails.jsx";
 
-export default function ArtPiecesDetailsPage({ pieces }) {
+export default function ArtPiecesDetailsPage({ pieces, onSubmitComment }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -16,6 +16,9 @@ export default function ArtPiecesDetailsPage({ pieces }) {
       artist={selectedArtPiece.artist}
       year={selectedArtPiece.year}
       genre={selectedArtPiece.genre}
+      slug={slug}
+      onSubmitComment={onSubmitComment}
+      comments={selectedArtPiece.comments}
     />
   );
 }
