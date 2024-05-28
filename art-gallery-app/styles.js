@@ -35,9 +35,46 @@ export default createGlobalStyle`
 }
 
 .artpiece {
-  border: 5px solid #e6c619; 
+  ${
+    "" /* border: 5px solid #e6c619; 
   border-radius: 10px; 
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background-color:#ddc; */
+  }
+  border:solid 5vmin #eee;
+  border-bottom-color:#c2ad3e;
+  border-left-color:#a89324;
+  border-radius:2px;
+  border-right-color:#a89324;
+  border-top-color:#b89e14;
+  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+  box-sizing:border-box;
+  display:inline-block;
+  margin:10vh 10vw;
+  height:80vh;
+  padding:5px;
+  position:relative;
+  text-align:center;
+  &:before {
+    border-radius:2px;
+    bottom:-2vmin;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
+    content:"";
+    left:-2vmin;
+    position:absolute;
+    right:-2vmin;
+    top:-2vmin;
+  }
+  &:after {
+    border-radius:2px;
+    bottom:-2.5vmin;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+    content:"";
+    left:-2.5vmin;
+    position:absolute;
+    right:-2.5vmin;
+    top:-2.5vmin;
+  }
 
 }
 
