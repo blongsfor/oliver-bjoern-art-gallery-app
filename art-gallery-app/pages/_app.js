@@ -7,12 +7,31 @@ import { useState, useEffect } from "react";
 export default function App({ Component, pageProps }) {
   const [artPiecesInfos, setArtPiecesInfos] = useState([]);
 
+  const handleAddComment = (slug, commentText) => {
+    console.log("slug, commentText", slug, commentText);
+    const newComment = {
+      text: commentText,
+      date: new Date().toLocaleString(),
+    };
+
+    setArtPiecesInfos((prevInfos) =>
+      prevInfos.map((artPieceInfo) =>
+        artPieceInfo.slug === slug && artPieceInfo.comments
+          ? {
+              ...artPieceInfo,
+              comments: [...artPieceInfo.comments, newComment],
+            }
+          : { ...artPieceInfo, comments: [newComment] }
+      )
+    );
+  };
+  console.log("artPiecesInfos", artPiecesInfos);
   function handleToggleFavorite(slug) {
     setArtPiecesInfos((prevInfos) =>
-      prevInfos.map((artPiece) =>
-        artPiece.slug === slug
-          ? { ...artPiece, isFavorite: !artPiece.isFavorite }
-          : artPiece
+      prevInfos.map((artPiecesInfos) =>
+        artPiecesInfos.slug === slug
+          ? { ...artPiecesInfos, isFavorite: !artPiecesInfos.isFavorite }
+          : artPiecesInfos
       )
     );
   }
@@ -53,6 +72,7 @@ export default function App({ Component, pageProps }) {
           pieces={artPiecesInfos}
           onToggleFavorite={handleToggleFavorite}
           artPiecesInfos={artPiecesInfos}
+          onSubmitComment={handleAddComment}
         />
         <Layout />
       </SWRConfig>
