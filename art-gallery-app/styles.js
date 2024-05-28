@@ -30,7 +30,7 @@ export default createGlobalStyle`
   border: 2px solid black;
   border-radius: 10px;
   font-weight: bold;
-  background-color: #edb790;
+  background-color: #E6BE8A;
   transition: background-color 0.5s ease; 
 }
 
@@ -93,10 +93,10 @@ ul {
 .details{
   text-align: center; 
   margin-bottom: 20px;
-  border: 3px solid #b5b8b1;
+  border: 3px solid #CFB53B;
   padding: 20px;
   border-radius: 25px;
-  background-color: #e2e3e1;
+  background-color:  #E6BE8A;
 
 }
 
@@ -143,6 +143,17 @@ ul {
     margin: 20px 0;
     font-size: 2em;
     font-weight: bold;
+
+
+}
+
+.heading1 {
+  
+  text-align: center;
+    margin: 20px 0;
+    font-size: 3em;
+    font-weight: bold;
+
 
 
 }

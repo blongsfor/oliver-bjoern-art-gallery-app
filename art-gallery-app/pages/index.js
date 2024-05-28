@@ -6,7 +6,7 @@ import Spotlight from "@/components/Spotlight/Spotlight";
 export default function SpotlightPage({ pieces, onToggleFavorite }) {
   return (
     <div>
-      <h1 className="heading">Gallery App</h1>
+      <h1 className="heading1">Gallery App</h1>
       <Spotlight pieces={pieces} onToggleFavorite={onToggleFavorite} />
     </div>
   );
