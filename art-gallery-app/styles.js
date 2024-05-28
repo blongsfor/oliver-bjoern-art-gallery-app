@@ -35,12 +35,6 @@ export default createGlobalStyle`
 }
 
 .artpiece {
-  ${
-    "" /* border: 5px solid #e6c619; 
-  border-radius: 10px; 
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  background-color:#ddc; */
-  }
   border:solid 5vmin #eee;
   border-bottom-color:#c2ad3e;
   border-left-color:#a89324;
@@ -50,7 +44,7 @@ export default createGlobalStyle`
   box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
   box-sizing:border-box;
   display:inline-block;
-  margin:10vh 10vw;
+  margin:10px 10px;
   height:80vh;
   padding:5px;
   position:relative;
@@ -88,7 +82,9 @@ ul {
 .details{
   text-align: center; 
   margin-bottom: 20px;
-  border: 2px solid black;
+  border: 5px solid #b5b8b1;
+  padding: 20px;
+  border-radius: 25px;
 
 }
 
@@ -114,8 +110,7 @@ ul {
 
 .favorite-button {
     position: relative;
-    top: 10px;
-    right: 10px;
+    top: 15px;
     background-color: #e6c619;
     color: white;
     border: none;
@@ -123,5 +118,9 @@ ul {
     padding: 10px;
     cursor: pointer;
   }
+
+
+
+ 
 
 `;
