@@ -2,7 +2,7 @@ import Layout from "@/components/Layout/Layout";
 import GlobalStyle from "../styles";
 import useSWR from "swr";
 import { SWRConfig } from "swr";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
@@ -12,24 +12,26 @@ export default function App({ Component, pageProps }) {
   );
 
   const handleAddComment = (slug, commentText) => {
-    console.log("slug, commentText", slug, commentText);
     const newComment = {
       text: commentText,
       date: new Date().toLocaleString(),
     };
 
     setArtPiecesInfos((prevInfos) =>
-      prevInfos.map((artPieceInfo) =>
-        artPieceInfo.slug === slug && artPieceInfo.comments
-          ? {
-              ...artPieceInfo,
-              comments: [...artPieceInfo.comments, newComment],
-            }
-          : { ...artPieceInfo, comments: [newComment] }
-      )
+      prevInfos.map((artPieceInfo) => {
+        if (artPieceInfo.slug === slug) {
+          return {
+            ...artPieceInfo,
+            comments: artPieceInfo.comments
+              ? [...artPieceInfo.comments, newComment]
+              : [newComment],
+          };
+        }
+        return artPieceInfo;
+      })
     );
   };
-  console.log("artPiecesInfos", artPiecesInfos);
+
   function handleToggleFavorite(slug) {
     setArtPiecesInfos((prevInfos) =>
       prevInfos.map((artPiecesInfos) =>

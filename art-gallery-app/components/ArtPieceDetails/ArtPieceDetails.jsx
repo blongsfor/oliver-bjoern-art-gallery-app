@@ -17,10 +17,6 @@ export default function ArtPieceDetails({
   onSubmitComment,
   artPiecesInfos,
 }) {
-  // const comments = artPiecesInfos?.find(
-  //   (artPieceInfo) => artPieceInfo.slug === slug
-  // )?.comments;
-  // console.log("sligslogslug: ", slug);
   return (
     <>
       <div className="artpiece-details">
