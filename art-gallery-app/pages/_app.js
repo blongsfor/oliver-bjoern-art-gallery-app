@@ -2,31 +2,20 @@ import Layout from "@/components/Layout/Layout";
 import GlobalStyle from "../styles";
 import useSWR from "swr";
 import { SWRConfig } from "swr";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
   const [artPiecesInfos, setArtPiecesInfos] = useState([]);
 
   function handleToggleFavorite(slug) {
-    const foundArtPiece = artPiecesInfos.find(
-      (artPiece) => artPiece.slug === slug
+    setArtPiecesInfos((prevInfos) =>
+      prevInfos.map((artPiece) =>
+        artPiece.slug === slug
+          ? { ...artPiece, isFavorite: !artPiece.isFavorite }
+          : artPiece
+      )
     );
-    if (foundArtPiece) {
-      setArtPiecesInfos(
-        artPiecesInfos.map(
-          (artPiecesInfo) =>
-            artPiecesInfo.slug === slug && {
-              ...artPiecesInfo,
-              isFavorite: !artPiecesInfo.isFavorite,
-            }
-        )
-      );
-    } else {
-      setArtPiecesInfos([...artPiecesInfos, { slug, isFavorite: true }]);
-    }
   }
-  console.log("artPiecesInfos _app.js", artPiecesInfos);
-  // console.log("artPiecesInfos[0]?.slug) _app.js", artPiecesInfos[0]?.slug);
 
   const URL = "https://example-apis.vercel.app/api/art";
 
@@ -35,7 +24,6 @@ export default function App({ Component, pageProps }) {
 
     if (!res.ok) {
       const error = new Error("An error occurred while fetching the data.");
-
       error.info = await res.json();
       error.status = res.status;
       throw error;
@@ -45,6 +33,12 @@ export default function App({ Component, pageProps }) {
   };
 
   const { data, error, isLoading } = useSWR(URL, fetcher);
+
+  useEffect(() => {
+    if (data) {
+      setArtPiecesInfos(data.map((piece) => ({ ...piece, isFavorite: false })));
+    }
+  }, [data]);
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
@@ -56,7 +50,7 @@ export default function App({ Component, pageProps }) {
       <SWRConfig value={{ fetcher }}>
         <Component
           {...pageProps}
-          pieces={data}
+          pieces={artPiecesInfos}
           onToggleFavorite={handleToggleFavorite}
           artPiecesInfos={artPiecesInfos}
         />
