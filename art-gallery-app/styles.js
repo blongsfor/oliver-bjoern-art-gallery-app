@@ -20,8 +20,8 @@ export default createGlobalStyle`
   justify-content: center; 
   padding: 0 20px;
   align-items: center;
-  
-   }
+  margin-inline: auto;
+  }
 
 .link {
   text-decoration: none; 
@@ -31,8 +31,14 @@ export default createGlobalStyle`
   border-radius: 10px;
   font-weight: bold;
   background-color: #edb790;
-
+  transition: background-color 0.5s ease; 
 }
+
+  .link:hover {
+    background-color: #d69c70; 
+  }
+
+
 
 .artpiece {
   border:solid 5vmin #eee;
@@ -82,9 +88,10 @@ ul {
 .details{
   text-align: center; 
   margin-bottom: 20px;
-  border: 5px solid #b5b8b1;
+  border: 3px solid #b5b8b1;
   padding: 20px;
   border-radius: 25px;
+  background-color: #e2e3e1;
 
 }
 
@@ -93,16 +100,23 @@ ul {
   flex-direction: column;
   align-items: center; 
   padding: 20px;
-
+  padding-bottom: 60px;
 }
 
 .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    padding: 0 20px;
-    width: 100%; /* Ensure the navbar takes the full width of its container */
+    padding: 10px 0;
+    z-index: 1000; /* Ensure the navbar stays on top */
   }
+
+
+
   .navbar .link {
   margin: 0 10px;
 }
@@ -119,8 +133,12 @@ ul {
     cursor: pointer;
   }
 
+.heading{
+  text-align: center;
+    margin: 20px 0;
+    font-size: 2em;
+    font-weight: bold;
 
 
- 
-
+}
 `;

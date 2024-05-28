@@ -6,7 +6,7 @@ export default function Spotlight({ pieces, onToggleFavorite }) {
 
   return (
     <div>
-      <h2>Spotlight</h2>
+      <h2 className="heading">Spotlight</h2>
       <ArtPiecePreview
         slug={selectedPiece?.slug}
         image={selectedPiece?.imageSource}
