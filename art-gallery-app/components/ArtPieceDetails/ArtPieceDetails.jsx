@@ -12,7 +12,6 @@ export default function ArtPieceDetails({
   onToggleFavorite,
 }) {
   return (
-<<<<<<< HEAD
     <div className="artpiece-details">
       <Link className="link" href={"/art-pieces"}>
         Back
@@ -31,20 +30,5 @@ export default function ArtPieceDetails({
         <p>Genre: {genre}</p>
       </div>
     </div>
-=======
-    <>
-      <Link href={"/art-pieces"}>Back</Link>
-      <Image src={image} width={500} height={500} alt={title}></Image>
-      <FavoriteButton
-        isFavorite={isFavorite}
-        onToggleFavorite={onToggleFavorite}
-      />
-
-      <h3>Title: {title}</h3>
-      <p>Artist: {artist}</p>
-      <p>Year: {year}</p>
-      <p>Genre: {genre}</p>
-    </>
->>>>>>> main
   );
 }
