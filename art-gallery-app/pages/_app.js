@@ -2,7 +2,7 @@ import Layout from "@/components/Layout/Layout";
 import GlobalStyle from "../styles";
 import useSWR from "swr";
 import { SWRConfig } from "swr";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
@@ -11,10 +11,7 @@ export default function App({ Component, pageProps }) {
     { defaultValue: [] }
   );
 
-  console.log("all the infos: ", artPiecesInfos);
-
   const handleAddComment = (slug, commentText) => {
-    console.log("slug, commentText", slug, commentText);
     const newComment = {
       text: commentText,
       date: new Date().toLocaleString(),
@@ -35,7 +32,6 @@ export default function App({ Component, pageProps }) {
     );
   };
 
-  console.log("artPiecesInfos", artPiecesInfos);
   function handleToggleFavorite(slug) {
     setArtPiecesInfos((prevInfos) =>
       prevInfos.map((artPiecesInfos) =>

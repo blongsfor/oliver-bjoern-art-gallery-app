@@ -6,7 +6,6 @@ export default function CommentForm({ onSubmitComment, slug }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (commentText?.trim()) {
-      console.log("commentText:", commentText);
       onSubmitComment(slug, commentText);
       setCommentText("");
     }
