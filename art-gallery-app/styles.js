@@ -153,8 +153,46 @@ ul {
     margin: 20px 0;
     font-size: 3em;
     font-weight: bold;
-
-
-
 }
+
+.comment-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
+  max-width: 800px; 
+  margin: 20px auto; 
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 100px;
+  border-radius: 25px;
+}
+
+
+input {
+  padding: 5px 10px; 
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+button {
+  text-decoration: none; 
+  color: inherit; 
+  padding: 5px 10px; 
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #E6BE8A;
+  transition: background-color 0.5s ease; 
+  cursor: pointer;
+  transition: background-color 0.5s ease; 
+}
+
+  button:hover {
+    background-color: #d69c70; 
+  }
 `;
