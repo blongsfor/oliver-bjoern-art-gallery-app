@@ -18,7 +18,7 @@ export default function ArtPieceDetails({
   artPiecesInfos,
 }) {
   // const comments = artPiecesInfos?.find(
-  //   (artPieceInfo) => artPieceInfo.slug === slug
+  //   (artPieceInfo) => artPieceInfo?.slug === slug
   // )?.comments;
   // console.log("sligslogslug: ", slug);
   return (

@@ -11,6 +11,8 @@ export default function App({ Component, pageProps }) {
     { defaultValue: [] }
   );
 
+  console.log("all the infos: ", artPiecesInfos);
+
   const handleAddComment = (slug, commentText) => {
     console.log("slug, commentText", slug, commentText);
     const newComment = {
@@ -19,16 +21,20 @@ export default function App({ Component, pageProps }) {
     };
 
     setArtPiecesInfos((prevInfos) =>
-      prevInfos.map((artPieceInfo) =>
-        artPieceInfo.slug === slug && artPieceInfo.comments
-          ? {
-              ...artPieceInfo,
-              comments: [...artPieceInfo.comments, newComment],
-            }
-          : { ...artPieceInfo, comments: [newComment] }
-      )
+      prevInfos.map((artPieceInfo) => {
+        if (artPieceInfo.slug === slug) {
+          return {
+            ...artPieceInfo,
+            comments: artPieceInfo.comments
+              ? [...artPieceInfo.comments, newComment]
+              : [newComment],
+          };
+        }
+        return artPieceInfo;
+      })
     );
   };
+
   console.log("artPiecesInfos", artPiecesInfos);
   function handleToggleFavorite(slug) {
     setArtPiecesInfos((prevInfos) =>
