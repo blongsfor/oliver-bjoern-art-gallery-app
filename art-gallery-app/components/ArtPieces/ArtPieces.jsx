@@ -1,5 +1,4 @@
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview.jsx";
-import Navigation from "../Navigation/Navigation.jsx";
 
 export default function ArtPieces({ pieces, onToggleFavorite }) {
   return (
