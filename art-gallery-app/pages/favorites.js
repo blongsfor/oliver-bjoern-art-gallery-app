@@ -6,7 +6,14 @@ export default function Favorites({ artPiecesInfos, onToggleFavorite }) {
   return (
     <>
       <h2 className="heading">Favorites</h2>
-      <ArtPieces pieces={favoritePieces} onToggleFavorite={onToggleFavorite} />
+      {favoritePieces.length > 0 ? (
+        <ArtPieces
+          pieces={favoritePieces}
+          onToggleFavorite={onToggleFavorite}
+        />
+      ) : (
+        <p>There are no favorites yet.</p>
+      )}
     </>
   );
 }
